@@ -175,12 +175,15 @@ game_hash[:home][:players][name] == name ? game_hash[:home][:players][name] : ga
 
 end
 
+
 def player_stats(name)
 
-game_hash[:home][:players].keys.each do |named|
+game_hash[:home][:players].keys.collect do |named|
 if name == named
-return game_hash[:home][:players][named]
+# return "home player #{name}"
+return game_hash[:home][:players][name]
 end
+end
+# return "away player #{name}"
 return game_hash[:away][:players][name]
-end
 end
