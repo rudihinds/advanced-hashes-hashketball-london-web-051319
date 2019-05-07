@@ -210,13 +210,14 @@ biggest_size = all_shoes.max
 
 home_players.each do |player|
 if game_hash[:home][:players][player][:shoe] == biggest_size
-return player
+return game_hash[:home][:players][player][:rebounds]
 end
 # elseif
 # away_players.each do |player|
 # game_hash[:away][:players][player][:shoe] ? player : "can't find it."
 end
 end
+
 
 
 
