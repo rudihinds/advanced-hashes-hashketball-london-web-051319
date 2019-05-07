@@ -171,6 +171,6 @@ end
 
 def player_stats(name)
 
-game_hash[:home][:players][name] == name
+game_hash[:home][:players][name] == name ? game_hash[:home][:players][name] : game_hash[:away][:players][name]
 
 end
