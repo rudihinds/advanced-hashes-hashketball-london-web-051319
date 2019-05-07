@@ -187,3 +187,36 @@ end
 # return "away player #{name}"
 return game_hash[:away][:players][name]
 end
+
+
+def big_shoe_rebounds
+# get array of all players
+home_players = game_hash[:home][:players].keys 
+away_players = game_hash[:away][:players].keys
+
+# all_players = home_players + away_players
+home_shoes = []
+home_players.each do |player|
+home_shoes << game_hash[:home][:players][player][:shoe]
+end
+
+away_shoes = []
+away_players.each do |player|
+away_shoes << game_hash[:away][:players][player][:shoe]
+end
+
+all_shoes = home_shoes + away_shoes
+biggest_size = all_shoes.max
+
+home_players.each do |player|
+if game_hash[:home][:players][player][:shoe] == biggest_size
+return player
+end
+# elseif
+# away_players.each do |player|
+# game_hash[:away][:players][player][:shoe] ? player : "can't find it."
+end
+end
+
+
+
